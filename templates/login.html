@@ -7,14 +7,17 @@
   </head>
   <body>
     <form method="POST" action="/">
-      Username:<input type="text" style="color:#888;" title="Username" name="name" onfocus="infocus(this)"
-      onblur="inputblur(this)"/>
-      <br>
-      Password:<input type="text" style="color:#888;" name="password" title = "Password" onfocus="infocus(this)"
-      onblur="inputblur(this)"/>
-      <br>
-        <input type="submit" name="submit" value="Log in"/>
+        <fieldset>
+          <legend>Log In Details</legend>
+          <p>
+            <label for="username">Username: </label>
+            <input type="text" id="username" name="username" required />
+          </p>
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" required />
+          </p>
+          <button type="submit" name="submit" onclick="location.href='/main'">Log In</button>
+        </fieldset>
     </form>
-    <button type="button" name="createProfileButton" onclick="location.href='/create_profile'">Create profile</button>
   </body>
 </html>
