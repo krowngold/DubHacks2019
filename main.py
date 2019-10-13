@@ -39,7 +39,7 @@ class CreateProfile(webapp2.RequestHandler): #Allow users access
         self.response.write(template.render(template_vars))
 
 class LogIn(webapp2.RequestHandler):
-    def checkUser(username, password):
+    def checkUser(self, username, password):
         user_list = User.query().fetch()
         for user in user_list:
             if (user.user_name == username and user.user_password == password):
@@ -51,7 +51,7 @@ class LogIn(webapp2.RequestHandler):
         self.response.write(template.render())
 
     def post(self):
-        if (checkUser(self.request.get(name), self.request.get(password))):
+        if (this.checkUser(self.request.get(name), self.request.get(password))):
             template = jinja_env.get_template("templates/main.html")
             self.response.write(template.render(template_vars))
         else:
@@ -77,7 +77,7 @@ class MainPage(webapp2.RequestHandler): #show map and pins of each unsafe locati
         self.response.write(template.render(template_vars))
 
 app = webapp2.WSGIApplication([
-    ('/', CreateProfile),
-    ('/login', LogIn),
+    ('/', LogIn),
+    ('/create_profile', CreateProfile),
     ('/main', MainPage)
 ])
