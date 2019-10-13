@@ -14,3 +14,24 @@ html, #map, body {
 #map {
   height: 80rem;
 }
+
+#map, button {
+  margin-bottom: 5rem;
+}
+
+#search-item {
+  width: 20rem;
+}
+
+#search-item, button {
+  height: 5rem;
+  border: solid black;
+  border-radius: 0.5rem;
+}
+
+button {
+  font-size: 2rem;
+  width: 10rem;
+  cursor: pointer;
+  margin-left: 2rem;
+}
