@@ -51,12 +51,12 @@ class LogIn(webapp2.RequestHandler):
         self.response.write(template.render())
 
     def post(self):
-        if (this.checkUser(self.request.get(name), self.request.get(password))):
+        if (self.checkUser(self.request.get("name"), self.request.get("password"))):
             template = jinja_env.get_template("templates/main.html")
-            self.response.write(template.render(template_vars))
+            self.response.write(template.render())
         else:
             template = jinja_env.get_template("templates/login.html")
-            self.response.write(template.render(template_vars))
+            self.response.write(template.render())
 
 class MainPage(webapp2.RequestHandler): #show map and pins of each unsafe location and why it's unsafe
     # def dataToJSON(self, data):
